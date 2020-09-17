@@ -8,7 +8,7 @@ class dbConnector:
     def createConnection(self):
         # Connect to the database
         connection = pymysql.connect(host='localhost',
-                                 user='root',
+                                 user='trade',
                                  port = 3306,
                                  password='autotrade',
                                  db='GrandExchange',

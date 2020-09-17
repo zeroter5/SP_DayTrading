@@ -4,7 +4,7 @@ from datetime import time
 import sys
 from numpy import float as floaty
 import numpy as np
-sys.path.append('/home/trade/Desktop/SP_DayTrading/')
+sys.path.append('/Users/ryan/IdeaProjects/SP_DayTrading/')
 
 import dbConnector as db
 import alpacaDrip as ad
