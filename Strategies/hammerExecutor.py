@@ -16,7 +16,7 @@ if __name__ == "__main__":
         #start this strategy at 9:35 AM
             #start_time = time()
             if datetime.datetime.now().time() > datetime.time(9,35):
-                print("here")
+                #print("here")
                 # Connect to the database
                 connector = db.dbConnector()
                 connection = connector.createConnection()
@@ -79,6 +79,7 @@ if __name__ == "__main__":
                                         connector.insertPosition(connection,workingSet[currentBar]['symbol'], 'hammer')
                                     else:
                                             connector.modifyPosition(connection,workingSet[currentBar]['symbol'], 1, 'hammer')
+                                    print("hammerBuy")
                                     connector.insertTrade(workingSet[currentBar]['symbol'], workingSet[currentBar]['high'], workingSet[currentBar]['low'], workingSet[currentBar]['open'], workingSet[currentBar]['close'], workingSet[currentBar]['volume'], shares, workingSet[currentBar]['barType'], 'hammerBuy', connection,takeProfit,lossProfit)
 
 
@@ -105,7 +106,7 @@ if __name__ == "__main__":
                                         #if strategy.submitSellOrder(x['symbol'], shares):
                                         connector.addCash(connection, cashChange, 8)
                                         connector.modifyPosition(connection,workingSet[currentBar]['symbol'],0,'hammer')
-                                        print("modifyPosition")
+                                        #print("modifyPosition")
                                         connector.insertTrade(workingSet[currentBar]['symbol'], workingSet[currentBar]['high'], workingSet[currentBar]['low'], workingSet[currentBar]['open'], workingSet[currentBar]['close'], workingSet[currentBar]['volume'], shares, workingSet[currentBar]['barType'], 'hammerSellAtLossStop', connection,0,0)
 
 

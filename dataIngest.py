@@ -14,8 +14,8 @@ if __name__ == '__main__':
 
     if datetime.datetime.now().time() > datetime.time(9,30):
         #initialize API information
-        ALPACA_KEY_ID = 'PKQQ0N228HPEPFXJPNK1'
-        ALPACA_SECRET_KEY = r'xGc19Nv8yzUTCJ7ISmf5h0U8pqxSzHAnxVwn5zp3'
+        ALPACA_KEY_ID = 'PKD6W26XBA1JGWOSJSU0'
+        ALPACA_SECRET_KEY = r'ysaezMtOX8sUghmR534ZGzEXzCTVpkDt26BEIY8e'
         APCA_RETRY_MAX=1
         api = tradeapi.REST(
             key_id=ALPACA_KEY_ID,

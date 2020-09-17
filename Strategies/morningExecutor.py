@@ -27,7 +27,7 @@ if __name__ == "__main__":
         #start this strategy at 9:35 AM
             #start_time = time()
             if datetime.datetime.now().time() > datetime.time(9,35):
-                print("here")
+                #print("here")
                 # Connect to the database
                 connector = db.dbConnector()
                 connection = connector.createConnection()
