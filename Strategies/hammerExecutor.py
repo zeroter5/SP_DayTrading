@@ -45,7 +45,6 @@ if __name__ == "__main__":
                 lossProfit = floaty()
                 for x in symbols[0:50]:
                     workingSet = connector.getBarsByTimeWindow(connection, window, now, x['symbol'])
-
                     if len(workingSet) == 5:
                         #print(workingSet)
                         currentBar = len(workingSet)-1
@@ -66,6 +65,7 @@ if __name__ == "__main__":
                             existingPosition = 1
 
                         closePrice = workingSet[currentBar]['close']
+                        print("above buy conditional")
                         if strategy.isHammerBar(workingSet[currentBar]) and sma < 0 and currentPosition != 1 and buyClose > workingSet[currentBar]['timestamp'].time():
                                     buyPrice = workingSet[currentBar]['close']
                                     shares = int(maxPosition / closePrice)

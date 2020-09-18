@@ -75,7 +75,7 @@ if __name__ == "__main__":
                                 lossProfit = targets[0]['takeLoss']
                             existingPosition = 1
                         closePrice = workingSet[currentBar]['close']
-
+                        print("pre buy conditionalg")
                         if isMorningStar(workingSet) and currentPosition != 1 and buyClose > workingSet[currentBar]['timestamp'].time():
                                     print("mbuy")
                                     buyPrice = workingSet[currentBar]['close']

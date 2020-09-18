@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     start = datetime.datetime.now()
 
-    if datetime.datetime.now().time() > datetime.time(9,30):
+    if datetime.datetime.now().time() > datetime.time(9,30) and datetime.datetime.now().time() < datetime.time(4,1):
         #initialize API information
         ALPACA_KEY_ID = 'PKD6W26XBA1JGWOSJSU0'
         ALPACA_SECRET_KEY = r'ysaezMtOX8sUghmR534ZGzEXzCTVpkDt26BEIY8e'

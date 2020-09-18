@@ -7,6 +7,7 @@ class dbConnector:
         print("")
     def createConnection(self):
         # Connect to the database
+
         connection = pymysql.connect(host='10.0.1.14',
                                  user='trade',
                                  password='autotrade',
@@ -15,13 +16,13 @@ class dbConnector:
                                  cursorclass=pymysql.cursors.DictCursor)
         return connection
 
-    def insertBar(self, symbol, high, low, open, close, volume, shareCount, barType, connection):
+    def insertBar(self, symbol, high, low, open, close, volume, connection):
         try:
             with connection.cursor() as cursor:
                 # Create a new record
                 #print(symbol, high, low, open, close, volume, connection)
-                sql = "INSERT INTO `Stonks` (`symbol`, `high`, `low`, `open`, `close`, `volume`, `shareCount`, `barType`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
-                cursor.execute(sql, (symbol, high, low, open, close, volume, shareCount, barType))
+                sql = "INSERT INTO `Stonks` (`symbol`, `high`, `low`, `open`, `close`, `volume`) VALUES (%s, %s, %s, %s, %s, %s)"
+                cursor.execute(sql, (symbol, high, low, open, close, volume))
                 # connection is not autocommit by default. So you must commit to save
                 # your changes.
                 connection.commit()
